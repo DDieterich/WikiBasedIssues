@@ -11,6 +11,7 @@ then
    echo "No value for TOKEN"
    exit -1
 fi
+echo "Using TOKEN ${TOKEN}"
 
 # Requires the ID of the last Issue in the repository
 #  Optionally, provide a value for lAST_ID as 2nd Command line Parameter.
@@ -23,12 +24,14 @@ then
    echo "No value for LAST_ID"
    exit -2
 fi
+echo "Using LAST_ID ${LAST_ID}"
 
 gh_id=1
 while [ ${gh_id} -le "${LAST_ID}" ]
 do
+   echo ""
    printf -v fn_id "%04i" ${gh_id}
-   #echo "${gh_id}, ${fn_id}"
+   echo "Collecting GitHub ID: ${gh_id}, Filename ID: ${fn_id}"
    curl -H "Authorization: token ${TOKEN}" \
       "https://api.github.com/repos/DMSTEX/DMSTEX/issues/${gh_id}" \
       > "Z${fn_id}.json"

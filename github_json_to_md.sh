@@ -2,6 +2,14 @@
 
 # sudo apt install jq
 
+awkfile="WikiBasedIssues/sort_tmplog.awk"
+if [ ! -s "${awkfile}" ]
+then
+   echo "Unable to find '${awkfile}' from '${PWD}'."
+   echo "Change directory and try again."
+   exit -1
+fi
+
 function json_cleanup () {
    sed -e '1,$s/^"//g' \
        -e '1,$s/"$//g' \
@@ -61,7 +69,7 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
                let i=${i}+1
                event_txt=`jq ".[${i}].event"       "${JSFILE/[.]json/_events.json}" | json_cleanup`
             done
-         } | awk -f sort_tmplog.awk
+         } | awk -f "${awkfile}"
          echo ""
       } | sed -e '1,$s/[\]r/\r/g' -e '1,$s/[\]n/\n/g' \
         > "../${JSFILE/json/}md"
