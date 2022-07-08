@@ -2,7 +2,11 @@
 
 # sudo apt install jq
 
-awkfile="WikiBasedIssues/sort_tmplog.awk"
+#  Run using: ../WikiBasedIssues/github_json_to_md.sh
+#      in a folder that contains dawnloaded issues
+#           that is under the Wiki root folder.
+
+awkfile="../WikiBasedIssues/sort_tmplog.awk"
 if [ ! -s "${awkfile}" ]
 then
    echo "Unable to find '${awkfile}' from '${PWD}'."

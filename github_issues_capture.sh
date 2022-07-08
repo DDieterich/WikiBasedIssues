@@ -1,23 +1,13 @@
 #!/bin/bash
 
-# Requires a "TOKEN" to read the issues reqository.
-#  Optionally, provide a value for TOKEN as 1st Command line Parameter.
-if [ ! -z "${1}" ]
-then
-   TOKEN="${1}"
-fi
-if [ -z "${TOKEN}" ]
-then
-   echo "No value for TOKEN"
-   exit -1
-fi
-echo "Using TOKEN ${TOKEN}"
+#  Run using: ../WikiBasedIssues/github_issues_capture.sh
+#  in an empty folder that is that is under the Wiki root folder.
 
 # Requires the ID of the last Issue in the repository
-#  Optionally, provide a value for lAST_ID as 2nd Command line Parameter.
-if [ ! -z "${2}" ]
+#  Optionally, provide a value for lAST_ID as 1st Command line Parameter.
+if [ ! -z "${1}" ]
 then
-   LAST_ID="${2}"
+   LAST_ID="${1}"
 fi
 if [ -z "${LAST_ID}" ]
 then
@@ -25,6 +15,19 @@ then
    exit -2
 fi
 echo "Using LAST_ID ${LAST_ID}"
+
+# Requires a "TOKEN" to read the issues reqository.
+#  Optionally, provide a value for TOKEN as 2nd Command line Parameter.
+if [ ! -z "${2}" ]
+then
+   TOKEN="${2}"
+fi
+if [ -z "${TOKEN}" ]
+then
+   echo "No value for TOKEN"
+   exit -1
+fi
+echo "Using TOKEN ${TOKEN}"
 
 gh_id=1
 while [ ${gh_id} -le "${LAST_ID}" ]
