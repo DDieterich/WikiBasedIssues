@@ -9,4 +9,5 @@ GitHub_Get_Issue_Schema.json | JSON Schema for Get Issue API at GitHub
 github_issues_capture.sh     | Captures Issue Data from GitHub
 github_json_to_md.sh         | Converts Captured Issue Data to Wiki Pages
 LICENSE                      | Software License
+pre-commit_trigger.sh        | Update Issue Summary File during Git Commit
 sort_tmplog.awk              | Sort Utility for Issue Comments and Events

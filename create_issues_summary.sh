@@ -2,6 +2,7 @@
 
 #  Run using: WikiBasedIssues/create_issues_summary.sh
 
+summfile="Z-Issues-Summary.md"
 awkfile="WikiBasedIssues/create_issues_summary.awk"
 if [ ! -s "${awkfile}" ]
 then
@@ -18,4 +19,4 @@ ls -U Z[0-9][0-9][0-9][0-9].md |
       head -7 "${FILE}"
    done |
    awk -f "${awkfile}" \
-   > Z-Issues-Summary.md
+   > "${summfile}"
