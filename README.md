@@ -1,2 +1,2 @@
 # WikiBasedIssues
-Wiki Based Issue Tracking System for GitHub/GitLab
+Wiki Based (Distributed) Issue Tracking System for GitHub/GitLab
