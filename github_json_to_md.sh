@@ -25,6 +25,11 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
    while read JSFILE
    do
       MDFILE="../${JSFILE/json/}md"
+      if [ -f "${MDFILE}" ]
+      then
+         echo "Skipping ${MDFILE} - already exists"
+         continue
+      fi
       echo "Creating ${MDFILE}"
       {  echo -n "Issue     | "; jq ".title"          "${JSFILE}" | json_cleanup
          echo -n "----------|-"; echo "---------"
