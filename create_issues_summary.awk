@@ -148,11 +148,11 @@ END {
             ln += 1;
             if ( ln % 10 == 1 ) {
                print "";
-               print "Page Name         | Last Modified    | Assigned       | Milestone | Est | Pct | Label     | Title";
-               print "------------------|------------------|----------------|-----------|-----|-----|-----------|-------";
+               print "Page Name         | Last Modified     | Assigned       | Milestone | Est | Pct | Label     | Title";
+               print "------------------|-------------------|----------------|-----------|-----|-----|-----------|-------";
             }
             printf   "%-18s", "[" fn ".md](" fn ")";
-            printf "| %-17s", dm[fn];
+            printf "| %-18s", dm[fn];
             printf "| %-15s", as[fn];
             printf "| %-10s", ms[fn];
             printf "| %-4s",  eh[fn];
