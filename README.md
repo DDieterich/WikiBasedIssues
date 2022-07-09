@@ -74,6 +74,10 @@ Review the "wiki" for this repository to see examples of Wiki Based Issues.
 See [Issue Template File](Z-Issue-Template.md)
 
 
+## See Also
+[RelDesGen Blog](https://www.reldesgen.com/2022/07/distributed-offline-issue-bug-tracker.html)
+
+
 ## File List
 
 Filename                     | Description
