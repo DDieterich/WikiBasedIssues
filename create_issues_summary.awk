@@ -145,9 +145,7 @@ END {
    lt = 0;
    for (sti in stc) {
       print "## " sti " Issues";
-      print ""
       print tz
-      print ""
       ln=0;
       for (fn in tt) {
          if (st[fn] == sti) {
