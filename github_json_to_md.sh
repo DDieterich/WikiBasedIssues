@@ -41,7 +41,7 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
          echo -n "%Complete | "; echo ""
          echo -n "Labels    | "
          i=0
-         label_name=`jq ".labels[${i}].name" "${JSFILE}"`
+         label_name=`jq ".labels[${i}].name" "${JSFILE}" | json_cleanup`
          while [ ! -z "${label_name}" \
                    -a "${label_name}" != "null" \
                    -a "${i}" -lt 100 ]
@@ -53,7 +53,7 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
                echo -n ", ${label_name}"
             fi
             let i=${i}+1
-            label_name=`jq ".labels[${i}].name" "${JSFILE}"`
+            label_name=`jq ".labels[${i}].name" "${JSFILE}" | json_cleanup`
          done
          echo ""
          echo -n "Links     | "; echo "[Issues Summary](Z-Issues-Summary)"
