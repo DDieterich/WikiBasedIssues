@@ -87,7 +87,7 @@ BEGIN {
    next;
    }
 
-/^Label     [|]/ {
+/^Labels    [|]/ {
    $0 = substr($0, 12);
    gsub(/^[ \t]+|[ \t]+$/, "", $0);
    if (length($0) > 0) {

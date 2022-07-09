@@ -16,7 +16,7 @@ ls -U Z[0-9][0-9][0-9][0-9].md |
    do
       echo "FILENAME  | ${FILE}"
       echo "Modified  | "`date -r "${FILE}" "+%Y%m%d %H%M %Z"`
-      head -7 "${FILE}"
+      head -10 "${FILE}"
    done |
    awk -f "${awkfile}" \
       > "${summfile}"
