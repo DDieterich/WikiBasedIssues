@@ -28,11 +28,11 @@ functionality is needed.  The solution provided here is simple:
 1. Clone the Wiki Repository.
 1. Add [WikiBasedIssues](https://github.com/DDieterich/WikiBasedIssues)
    as a SubModule in a "WikiBasedIssues" folder at the root level
-   of the Wiki Repository.
+   of the (cloned) Wiki Repository.
 1. Create Wiki Based Issues using Format listed below.
 1. (optional) Download Issues from GitHub Repository
     * Open a BASH shell
-    * "cd" to the root level of the Cloned Wiki Repository.
+    * "cd" to the root level of the (cloned) Wiki Repository.
     * Create "issues_download" folder.
     * cd to "issues_download" folder.
     * Run: "../WikiBasedIssues/github_issues_capture.sh" LAST_ID TOKEN
@@ -44,12 +44,13 @@ functionality is needed.  The solution provided here is simple:
         * (Converts JSON file data to Wiki Based Issues.)
 1. To create the Issue Summary Report Wiki Page
     * Open a BASH shell
-    * "cd" to the root level of the Wiki Repository.
+    * "cd" to the root level of the (cloned) Wiki Repository.
     * Run: "WikiBasedIssues/create_issues_summary.sh".
 1. (One Time Only) Add `[Issues Summary](Z-Issues-Summary)` to Wiki Home Page.
-1. Stage-Commit-Push
+1. Stage-Commit-Push the (cloned) Wiki Repository
 1. Review results on GitHub Wiki
 1. (optional) Add "pre-commit" trigger to Git client.
+    * Comfirm you are working in the (cloned) Wiki Repository.
     * Follow installation instructions in comments of "WikiBasedIssues/pre-commit_trigger.sh" file.
 
 ## Wiki Based Issue Format
