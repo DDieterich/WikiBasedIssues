@@ -12,11 +12,12 @@ then
 fi
 
 ls -U Z[0-9][0-9][0-9][0-9].md |
-   while read FILE
-   do
-      echo "FILENAME  | ${FILE}"
-      echo "Modified  | "`date -r "${FILE}" "+%Y%m%d %H%M %Z"`
-      head -7 "${FILE}"
-   done |
-   awk -f "${awkfile}" \
-   > "${summfile}"
+   {  while read FILE
+      do
+         echo "FILENAME  | ${FILE}"
+         echo "Modified  | "`date -r "${FILE}" "+%Y%m%d %H%M"`
+         head -7 "${FILE}"
+      done
+      echo "Timezone: "`date -r . "+%Z (%:z)"`
+   } | awk -f "${awkfile}" \
+       > "${summfile}"

@@ -97,6 +97,9 @@ BEGIN {
    next;
    }
 
+/^Timezone: / {
+   tz = $0;
+
 END {
    print "## Statuses";
    tot = 0;
@@ -141,6 +144,9 @@ END {
    lt = 0;
    for (sti in stc) {
       print "## " sti " Issues";
+      print ""
+      print tz
+      print ""
       ln=0;
       for (fn in tt) {
          if (st[fn] == sti) {
@@ -148,11 +154,11 @@ END {
             ln += 1;
             if ( ln % 10 == 1 ) {
                print "";
-               print "Page Name         | Last Modified     | Assigned       | Milestone | Est | Pct | Label     | Title";
-               print "------------------|-------------------|----------------|-----------|-----|-----|-----------|-------";
+               print "Page Name         | Last Modified | Assigned       | Milestone | Est | Pct | Label     | Title";
+               print "------------------|---------------|----------------|-----------|-----|-----|-----------|-------";
             }
             printf   "%-18s", "[" fn ".md](" fn ")";
-            printf "| %-18s", dm[fn];
+            printf "| %-14s", dm[fn];
             printf "| %-15s", as[fn];
             printf "| %-10s", ms[fn];
             printf "| %-4s",  eh[fn];
