@@ -60,7 +60,7 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
          echo ""
          {  nc=`jq ".comments" "${JSFILE}"`
             i=0
-            while [ ${i} -lt ${nc} ]
+            while [ "${i}" -lt "${nc}" ]
             do
                cmt_usr=`jq ".[${i}].user.login" "${JSFILE/[.]json/_comments.json}" | json_cleanup`
                cmt_dtm=`jq ".[${i}].created_at" "${JSFILE/[.]json/_comments.json}" | json_cleanup`
