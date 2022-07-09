@@ -24,6 +24,8 @@ function json_cleanup () {
 ls -U Z[0-9][0-9][0-9][0-9].json |
    while read JSFILE
    do
+      MDFILE="../${JSFILE/json/}md"
+      echo "Creating ${MDFILE}"
       {  echo -n "Issue     | "; jq ".title"          "${JSFILE}" | json_cleanup
          echo -n "----------|-"; echo "---------"
          echo -n "Status    | "; jq ".state"          "${JSFILE}" | json_cleanup
@@ -76,5 +78,5 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
          } | awk -f "${awkfile}"
          echo ""
       } | sed -e '1,$s/[\]r/\r/g' -e '1,$s/[\]n/\n/g' \
-        > "../${JSFILE/json/}md"
+        > "${MDFILE}"
    done
