@@ -23,6 +23,11 @@ functionality is needed.  The solution provided here is simple:
     * A master list of all the issues being tracked.
 
 
+## Example
+
+Review the "wiki" for this repository to see examples of Wiki Based Issues.
+
+
 ## Installation
 
 1. Clone the Wiki Repository.
@@ -52,6 +57,7 @@ functionality is needed.  The solution provided here is simple:
 1. (optional) Add "pre-commit" trigger to Git client.
     * Comfirm you are working in the (cloned) Wiki Repository.
     * Follow installation instructions in comments of "WikiBasedIssues/pre-commit_trigger.sh" file.
+
 
 ## Wiki Based Issue Format
 
