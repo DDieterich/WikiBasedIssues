@@ -99,6 +99,7 @@ BEGIN {
 
 /^Timezone: / {
    tz = $0;
+   }
 
 END {
    print "## Statuses";
