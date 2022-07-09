@@ -31,15 +31,31 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
          continue
       fi
       echo "Creating ${MDFILE}"
-      {  echo -n "Issue     | "; jq ".title"          "${JSFILE}" | json_cleanup
+      {  echo -n "Issue     | "; jq ".title"           "${JSFILE}" | json_cleanup
          echo -n "----------|-"; echo "---------"
-         echo -n "Status    | "; jq ".state"          "${JSFILE}" | json_cleanup
-         echo -n "Assigned  | "; jq ".assignee.login" "${JSFILE}" | json_cleanup
-         #echo -n "Assignees | "; jq ".assignees"      "${JSFILE}" | json_cleanup
-         echo -n "Milestone | "; jq ".milestone"      "${JSFILE}" | json_cleanup
+         echo -n "Status    | "; jq ".state"           "${JSFILE}" | json_cleanup
+         echo -n "Assigned  | "; jq ".assignee.login"  "${JSFILE}" | json_cleanup
+         #echo -n "Assignees | "; jq ".assignees"       "${JSFILE}" | json_cleanup
+         echo -n "Milestone | "; jq ".milestone.title" "${JSFILE}" | json_cleanup
          echo -n "Est Hrs   | "; echo ""
          echo -n "%Complete | "; echo ""
-         echo -n "Labels    | "; jq ".labels"         "${JSFILE}" | json_cleanup
+         echo -n "Labels    | "
+         i=0
+         label_name=`jq ".labels[${i}].name" "${JSFILE}"`
+         while [ ! -z "${label_name}" \
+                   -a "${label_name}" != "null" \
+                   -a "${i}" -lt 100 ]
+         do
+            if [ "${i}" = "0" ]
+            then
+               echo -n "${label_name}"
+            else
+               echo -n ", ${label_name}"
+            fi
+            let i=${i}+1
+            label_name=`jq ".labels[${i}].name" "${JSFILE}"`
+         done
+         echo ""
          echo -n "Links     | "; echo "[Issues Summary](Z-Issues-Summary)"
          echo ""
          echo ""
