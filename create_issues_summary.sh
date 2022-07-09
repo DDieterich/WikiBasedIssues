@@ -15,7 +15,7 @@ ls -U Z[0-9][0-9][0-9][0-9].md |
    while read FILE
    do
       echo "FILENAME  | ${FILE}"
-      echo "Modified  | "`date -r "${FILE}" "+%Y%m%d %H%M%z"`
+      echo "Modified  | "`date -r "${FILE}" "+%Y%m%d %H%M%Z"`
       head -7 "${FILE}"
    done |
    awk -f "${awkfile}" \
