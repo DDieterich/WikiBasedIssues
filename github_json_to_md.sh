@@ -34,8 +34,23 @@ ls -U Z[0-9][0-9][0-9][0-9].json |
       {  echo -n "Issue     | "; jq ".title"           "${JSFILE}" | json_cleanup
          echo -n "----------|-"; echo "---------"
          echo -n "Status    | "; jq ".state"           "${JSFILE}" | json_cleanup
-         echo -n "Assigned  | "; jq ".assignee.login"  "${JSFILE}" | json_cleanup
-         #echo -n "Assignees | "; jq ".assignees"       "${JSFILE}" | json_cleanup
+         echo -n "Assigned  | "; 
+         i=0
+         assignee=`jq ".assignees[${i}].login"  "${JSFILE}" | json_cleanup`
+         while [ ! -z "${assignee}" \
+                   -a "${assignee}" != "null" \
+                   -a "${i}" -lt 100 ]
+         do
+            if [ "${i}" = "0" ]
+            then
+               echo -n "${assignee}"
+            else
+               echo -n ", ${assignee}"
+            fi
+            let i=${i}+1
+            assignee=`jq ".assignees[${i}].login" "${JSFILE}" | json_cleanup`
+         done
+         echo ""
          echo -n "Milestone | "; jq ".milestone.title" "${JSFILE}" | json_cleanup
          echo -n "Est Hrs   | "; echo ""
          echo -n "%Complete | "; echo ""
