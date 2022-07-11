@@ -15,9 +15,9 @@ BEGIN {
    st[fn] = "(null S)";
    as[fn] = "(null A)";
    ms[fn] = "(null M)";
-   #eh[fn] = "(0E)";
-   #pc[fn] = "(0P)";
-   #lb[fn] = "(null L)";
+   eh[fn] = "(0E)";
+   pc[fn] = "(0P)";
+   lb[fn] = "(null L)";
    next;
    }
 
@@ -144,8 +144,8 @@ END {
       ln=0;
       for (fn in tt) {
          if (st[fn] == sti) {
-            lt += 1;
             ln += 1;
+            lt += 1;
             if ( ln % 10 == 1 ) {
                print "";
                print "Page Name         | Last Modified     | Assigned       | Milestone | Est | Pct | Label     | Title";
