@@ -1,6 +1,8 @@
 # WikiBasedIssues
 Wiki Based (Distributed) Issue Tracking System for GitHub/GitLab
 
+*NOTE:* Issues are tracked in the Wiki.  See: [Issues Summary](https://github.com/DDieterich/WikiBasedIssues/wiki/Z-Issues-Summary)
+
 
 ## Overview
 This is a linux/GNU based set of scripts to accomplish to missions:
