@@ -76,6 +76,11 @@ Review the "wiki" for this repository to see examples of Wiki Based Issues.
 See [Issue Template File](Z-Issue-Template.md)
 
 
+## Parital Sample Summary Report
+
+![Partial Example Summary Report](https://user-images.githubusercontent.com/12377020/178559307-b703acef-7b43-4a3f-8f0f-7ea45178f4ed.png)
+
+
 ## See Also
 [RelDesGen Blog](https://www.reldesgen.com/2022/07/distributed-offline-issue-bug-tracker.html)
 

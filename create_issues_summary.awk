@@ -15,8 +15,8 @@ BEGIN {
    st[fn] = "(null S)";
    as[fn] = "(null A)";
    ms[fn] = "(null M)";
-   eh[fn] = "(0E)";
-   pc[fn] = "(0P)";
+   eh[fn] = "0E";
+   pc[fn] = "0P";
    lb[fn] = "(null L)";
    next;
    }
