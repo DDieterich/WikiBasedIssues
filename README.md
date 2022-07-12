@@ -76,7 +76,7 @@ See [Issue Template File](Z-Issue-Template.md)
 
 ## Parital Sample Summary Report
 
-![Partial Example Summary Report](https://user-images.githubusercontent.com/12377020/178556451-e247e7ee-0bc3-4337-aa2d-69ce73de84ee.png)
+![Partial Example Summary Report](https://user-images.githubusercontent.com/12377020/178559307-b703acef-7b43-4a3f-8f0f-7ea45178f4ed.png)
 
 
 ## See Also
