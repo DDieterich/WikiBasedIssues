@@ -10,7 +10,6 @@ BEGIN {
    gsub(/^[ \t]+|[ \t]+$/, "", $0);
    gsub(/[.]md/, "", $0);
    fn = $0;
-   dm[fn] = "(null D)";
    tt[fn] = "(null T)";
    st[fn] = "(null S)";
    as[fn] = "(null A)";
@@ -18,15 +17,6 @@ BEGIN {
    eh[fn] = "0E";
    pc[fn] = "0P";
    lb[fn] = "(null L)";
-   next;
-   }
-
-/^Modified  [|]/ {
-   $0 = substr($0, 12);
-   gsub(/^[ \t]+|[ \t]+$/, "", $0);
-   if (length($0) > 0) {
-      dm[fn] = $0;
-      }
    next;
    }
 
@@ -148,11 +138,10 @@ END {
             lt += 1;
             if ( ln % 10 == 1 ) {
                print "";
-               print "Page Name         | Last Modified     | Assigned       | Milestone | Est | Pct | Label     | Title";
-               print "------------------|-------------------|----------------|-----------|-----|-----|-----------|-------";
+               print "Page Name         | Assigned       | Milestone | Est | Pct | Label     | Title";
+               print "------------------|----------------|-----------|-----|-----|-----------|-------";
             }
             printf   "%-18s", "[" fn ".md](" fn ")";
-            printf "| %-18s", dm[fn];
             printf "| %-15s", as[fn];
             printf "| %-10s", ms[fn];
             printf "| %-4s",  eh[fn];
