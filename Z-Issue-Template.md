@@ -13,4 +13,4 @@ Links     | [Issues Summary](Z-Issues-Summary)
 ## Resolution
 
 ## Issue Log
-*(Add newest entries on top and add Date/Time and Author for each entry.)*
+*(Newest entries on top: YYYYMMDD HH24:MI TZD, Author, Text)*
