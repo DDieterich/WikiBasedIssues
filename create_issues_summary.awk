@@ -33,7 +33,7 @@ BEGIN {
    $0 = substr($0, 12);
    gsub(/^[ \t]+|[ \t]+$/, "", $0);
    if (length($0) > 0) {
-      st[fn] = $0;
+      st[fn] = toupper($0);
       }
    stc[st[fn]] += 1;
    next;
@@ -43,7 +43,7 @@ BEGIN {
    $0 = substr($0, 12);
    gsub(/^[ \t]+|[ \t]+$/, "", $0);
    if (length($0) > 0) {
-      as[fn] = $0;
+      as[fn] = toupper($0);
       }
    asc[as[fn]] += 1;
    next;
@@ -53,7 +53,7 @@ BEGIN {
    $0 = substr($0, 12);
    gsub(/^[ \t]+|[ \t]+$/, "", $0);
    if (length($0) > 0) {
-      ms[fn] = $0;
+      ms[fn] = toupper($0);
       }
    msc[ms[fn]] += 1;
    next;
@@ -81,7 +81,7 @@ BEGIN {
    $0 = substr($0, 12);
    gsub(/^[ \t]+|[ \t]+$/, "", $0);
    if (length($0) > 0) {
-      lb[fn] = $0;
+      lb[fn] = toupper($0);
       }
    lbc[lb[fn]] += 1;
    next;
