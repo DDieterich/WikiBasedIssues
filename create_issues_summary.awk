@@ -91,7 +91,7 @@ END {
    print "## Statuses";
    tot = 0;
    for (sti in stc) {
-      print "* **" sti "** - " stc[sti];
+      print "* **[" sti "](Z-Issues-Summary#" sti "-issues)** - " stc[sti];
       tot += stc[sti];
       }
    print "";

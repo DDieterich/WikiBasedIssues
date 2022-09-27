@@ -2,8 +2,9 @@
 
 #  Run using: WikiBasedIssues/create_issues_summary.sh
 
+srcdir=`dirname "$0"`
 summfile="Z-Issues-Summary.md"
-awkfile="WikiBasedIssues/create_issues_summary.awk"
+awkfile="${srcdir}/create_issues_summary.awk"
 if [ ! -s "${awkfile}" ]
 then
    echo "Unable to find '${awkfile}' from '${PWD}'."
@@ -24,6 +25,4 @@ ls -U Z[0-9][0-9][0-9][0-9].md |
       #   echo "Modified  | "`date -r "./${FILE}" "+%Y%m%d %H%M %z"`
       #fi
       head -10 "${FILE}"
-   done |
-   awk -f "${awkfile}" \
-      > "${summfile}"
+   done | awk -f "${awkfile}" > "${summfile}"
