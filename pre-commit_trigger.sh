@@ -5,10 +5,8 @@
 # exit with non-zero status after issuing an appropriate message if
 # it wants to stop the commit.
 
-# 1) Create folder ".githooks" at Wiki repository root level
-# 2) Copy this file to ".githooks/pre-commit"
-# 3) Use this command to move the git hook location:
-#    git config core.hooksPath .githooks
+# To activate, copy this script into the existing directory:
+#  .git/hooks
 
 function show_error () {
    echo "To avoid this pre-commit trigger, run 'git commit' with '--no-verify'."
