@@ -1,6 +1,9 @@
 
 BEGIN {
+   # Order by indices in descending order compared as strings
+   # https://www.gnu.org/software/gawk/manual/html_node/Controlling-Scanning.html
    PROCINFO["sorted_in"] = "@ind_str_desc";
+   #
    IGNORECASE = 1;  # Ignore Case in Search Strings
    RS = "\r?\n";    # Allow for MS-Windows Line Endings
    }
